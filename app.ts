@@ -1,3 +1,6 @@
-const userName = 'mike';
+// button はあるので ! で null でないと伝える
+const button = document.querySelector('button')!;
 
-console.log(userName);
+button?.addEventListener('click', () => {
+    console.log('click');
+});

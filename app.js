@@ -1,3 +1,6 @@
 "use strict";
-var userName = 'mike';
-console.log(userName);
+// button はあるので ! で null でないと伝える
+var button = document.querySelector('button');
+button === null || button === void 0 ? void 0 : button.addEventListener('click', function () {
+    console.log('click');
+});
