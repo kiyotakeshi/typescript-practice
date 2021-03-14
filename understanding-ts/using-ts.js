@@ -1,3 +1,4 @@
+"use strict";
 var button = document.querySelector('button');
 // 必ず取得できる場合は null にならないことを宣言 !
 // input 要素であることが確実なので指定
