@@ -8,8 +8,6 @@ function add(n1, n2, showResult, phrase) {
         return result;
     }
 }
-// 変数には型を指定していないのは、型推論(type inference)を利用しているから
-// 右辺が 5 なので number 型と推論される
 var number1 = 5;
 var number2 = 10;
 var printResult = true;
