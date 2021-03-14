@@ -1,4 +1,4 @@
-const person: {
+const tuplePerson: {
     name: string;
     age: number;
     hobbies: string[];
@@ -29,11 +29,37 @@ const person: {
 // let favariteActivities: string[];
 // favariteActivities = ['Sports', 'Cooking'];
 
-console.log(person);
+console.log(tuplePerson);
 
-for (const hobby of person.hobbies) {
+for (const hobby of tuplePerson.hobbies) {
     // hobby. とすると string の property にアクセスできコードを安全かつ簡単に書ける
     console.log(hobby.toUpperCase());
+}
+
+console.log('-----------------');
+
+enum Role {
+    ADMIN,
+    READ_ONLY,
+    AUTHOR,
+}
+
+const enumPerson = {
+    name: 'mike',
+    age: 30,
+    hobbies: ['Sports', 'Cooking'],
+    // 文字列で指定する
+    // role: 'READ ONLY USER',
+    role: Role.ADMIN,
+};
+
+// 文字列が完全に一致していないといけない
+// if (enumPerson.role === 'READ-ONLY-USER') {
+//     console.log('読み取り専用ユーザ');
+// }
+
+if (enumPerson.role === Role.ADMIN) {
+    console.log('管理ユーザ');
 }
 
 // const product: {
@@ -45,6 +71,9 @@ for (const hobby of person.hobbies) {
 //         description: string;
 //     };
 // }
+
+console.log('-----------------');
+
 const product = {
     id: 'abc1',
     price: 13,
