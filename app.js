@@ -1,14 +1,31 @@
-function add(n1, n2, showResult, phrase) {
-    var result = n1 + n2;
-    if (showResult) {
-        console.log(phrase + result);
+// 明示的に型を書く場合
+// const person: {
+//     name: string;
+//     age: number;
+// }
+// 型推論が動作する場合は、型推論を使うほうがいい
+var person = {
+    name: 'mike',
+    age: 30
+};
+console.log(person);
+console.log(person.name);
+// const product: {
+//     id: string;
+//     price: number;
+//     tags: string[];
+//     details: {
+//         title: string;
+//         description: string;
+//     };
+// }
+var product = {
+    id: 'abc1',
+    price: 13,
+    tags: ['great-offer', 'hot-and-new'],
+    details: {
+        title: 'Red Carpet',
+        description: 'A great carpet'
     }
-    else {
-        return result;
-    }
-}
-var number1 = 5;
-var number2 = 10;
-var printResult = true;
-var resultPhrase = 'Result: ';
-add(number1, number2, printResult, resultPhrase);
+};
+console.log(product);

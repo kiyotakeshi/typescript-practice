@@ -1,18 +1,35 @@
-function add(n1: number, n2: number, showResult: boolean, phrase:  string) {
+// 明示的に型を書く場合
+// const person: {
+//     name: string;
+//     age: number;
+// }
 
-    const result = n1 + n2;
-    if (showResult) {
-        console.log(phrase + result);
-    } else {
-        return result;
-    }
-}
+// 型推論が動作する場合は、型推論を使うほうがいい
+const person = {
+    name: 'mike',
+    age: 30,
+};
 
-// 変数には型を指定していないのは、型推論(type inference)を利用しているから
-// 右辺が 5 なので number 型と推論される
-let number1 = 5;
-const number2 = 10;
-const printResult = true;
-const resultPhrase = 'Result: ';
+console.log(person);
+console.log(person.name);
 
-add(number1, number2, printResult, resultPhrase);
+// const product: {
+//     id: string;
+//     price: number;
+//     tags: string[];
+//     details: {
+//         title: string;
+//         description: string;
+//     };
+// }
+const product = {
+    id: 'abc1',
+    price: 13,
+    tags: ['great-offer', 'hot-and-new'],
+    details: {
+        title: 'Red Carpet',
+        description: 'A great carpet',
+    },
+};
+
+console.log(product);
