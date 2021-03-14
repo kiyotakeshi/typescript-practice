@@ -1,30 +1,21 @@
-function combine(input1, // 型の再利用ができる
-input2, resultConversion) {
-    var result;
-    // ランタイムでチェックする必要があるので処理を記載
-    if ((typeof input1 == 'number' && typeof input2 === 'number') ||
-        resultConversion === 'as-number') {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+// 戻り値の型を指定する場合(※推論されているので明示的に書く必要はない)
+function add(n1, n2) {
+    return n1 + n2;
 }
-var combineAges = combine(30, 26, 'as-number');
-console.log(combineAges);
-var combineStringAges = combine('30', '26', 'as-number');
-console.log(combineStringAges);
-var combinedNames = combine('Max', 'Anna', 'as-text');
-console.log(combinedNames);
-// alias 型は Object 型と組み合わせても良い
-console.log('--------------------');
-function greet(user) {
-    console.log("Hi, I'm " + user.name);
+// void 型(何も返さない) :void と書く必要も基本的にない
+function printResult(num) {
+    console.log('Result: ' + num);
 }
-function isOlder(user, checkAge) {
-    return checkAge > user.age;
-}
-var user1 = { name: 'Mike', age: 30 };
-greet(user1);
-console.log(isOlder(user1, 31));
+// 型を指定せずに宣言するので、 any 型となる
+// let combineValues;
+// 関数を入れられるように指定しても、別の関数が入る恐れがある
+// let combineValues: Function;
+// 関数の引数の型と戻り値の型を指定できる
+var combineValues;
+// add 関数を格納
+combineValues = add;
+// any なので number を入れられてしまう
+// combineValues = 5;
+// 変数と通して関数を実行する
+console.log(combineValues(8, 8));
+printResult(add(5, 12));

@@ -1,52 +1,29 @@
-// alias 型
-type Combinable = number | string;
-
-// 型の名前を説明的にすることができる
-type ConversionDescriptor = 'as-number' | 'as-text';
-
-function combine(
-    input1: Combinable, // 型の再利用ができる
-    input2: Combinable,
-    resultConversion: ConversionDescriptor
-) {
-    let result;
-
-    // ランタイムでチェックする必要があるので処理を記載
-    if (
-        (typeof input1 == 'number' && typeof input2 === 'number') ||
-        resultConversion === 'as-number'
-    ) {
-        result = +input1 + +input2;
-    } else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+// 戻り値の型を指定する場合(※推論されているので明示的に書く必要はない)
+function add(n1: number, n2: number): number {
+    return n1 + n2;
 }
 
-const combineAges = combine(30, 26, 'as-number');
-console.log(combineAges);
-
-const combineStringAges = combine('30', '26', 'as-number');
-console.log(combineStringAges);
-
-const combinedNames = combine('Max', 'Anna', 'as-text');
-console.log(combinedNames);
-
-// alias 型は Object 型と組み合わせても良い
-console.log('--------------------');
-
-// 型の定義を一箇所で管理し、繰り返し記述することを避けられる　
-type User = { name: string; age: number };
-
-const user1: User = { name: 'Mike', age: 30 };
-
-function greet(user: User) {
-    console.log(`Hi, I'm ${user.name}`);
+// void 型(何も返さない) :void と書く必要も基本的にない
+function printResult(num: number) {
+    console.log('Result: ' + num);
 }
 
-function isOlder(user: User, checkAge: number) {
-    return checkAge > user.age;
-}
+// 型を指定せずに宣言するので、 any 型となる
+// let combineValues;
 
-greet(user1);
-console.log(isOlder(user1, 31)); // true
+// 関数を入れられるように指定しても、別の関数が入る恐れがある
+// let combineValues: Function;
+
+// 関数の引数の型と戻り値の型を指定できる
+let combineValues: (a: number, b: number) => number;
+
+// add 関数を格納
+combineValues = add;
+
+// any なので number を入れられてしまう
+// combineValues = 5;
+
+// 変数と通して関数を実行する
+console.log(combineValues(8, 8));
+
+printResult(add(5, 12));
