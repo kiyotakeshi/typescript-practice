@@ -11,4 +11,3 @@ button.addEventListener('click', function () {
     // input form の value property の値は文字列
     console.log(add(+input1.value, +input2.value));
 });
-//# sourceMappingURL=using-ts.js.map

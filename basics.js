@@ -15,4 +15,3 @@ var number2 = 10;
 var printResult = true;
 var resultPhrase = 'Result: ';
 add(number1, number2, printResult, resultPhrase);
-//# sourceMappingURL=basics.js.map

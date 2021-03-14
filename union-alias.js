@@ -29,4 +29,3 @@ function isOlder(user, checkAge) {
 }
 greet(user1);
 console.log(isOlder(user1, 31)); // true
-//# sourceMappingURL=union-alias.js.map

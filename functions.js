@@ -29,4 +29,3 @@ function addAndHandle(n1, n2, cb) {
 addAndHandle(10, 20, function (result) {
     console.log(result);
 });
-//# sourceMappingURL=functions.js.map
