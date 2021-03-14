@@ -67,3 +67,4 @@ var product = {
     },
 };
 console.log(product);
+//# sourceMappingURL=object-array-tuple-enum.js.map

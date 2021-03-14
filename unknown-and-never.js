@@ -16,3 +16,4 @@ function generateError(message, code) {
 }
 var result = generateError('エラーが発生', 500);
 console.log(result); // undifined すら表示されない
+//# sourceMappingURL=unknown-and-never.js.map
