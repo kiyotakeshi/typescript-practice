@@ -1,5 +1,5 @@
-// union 型を使用
-function combine(input1, input2, resultConversion) {
+function combine(input1, // 型の再利用ができる
+input2, resultConversion) {
     var result;
     // ランタイムでチェックする必要があるので処理を記載
     if ((typeof input1 == 'number' && typeof input2 === 'number') ||
@@ -10,11 +10,6 @@ function combine(input1, input2, resultConversion) {
         result = input1.toString() + input2.toString();
     }
     return result;
-    // if (resultConversion === 'as-number') {
-    //     return +result;
-    // } else {
-    //     return result.toString();
-    // }
 }
 var combineAges = combine(30, 26, 'as-number');
 console.log(combineAges);
@@ -22,3 +17,14 @@ var combineStringAges = combine('30', '26', 'as-number');
 console.log(combineStringAges);
 var combinedNames = combine('Max', 'Anna', 'as-text');
 console.log(combinedNames);
+// alias 型は Object 型と組み合わせても良い
+console.log('--------------------');
+function greet(user) {
+    console.log("Hi, I'm " + user.name);
+}
+function isOlder(user, checkAge) {
+    return checkAge > user.age;
+}
+var user1 = { name: 'Mike', age: 30 };
+greet(user1);
+console.log(isOlder(user1, 31));
