@@ -67,5 +67,14 @@
     /* Advanced Options */
     "skipLibCheck": true,                           /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true        /* Disallow inconsistently-cased references to the same file. */
-  }
+  },
+  // "exclude": [
+  //   "analytics.ts",
+  //   "node_modules" // こちらは設定しなくても元から除外してくれている
+  // ]
+
+  // こちらに指定したファイル以外はコンパイル対象外
+  // "include": [
+  //   "analytics.ts"
+  // ]
 }
