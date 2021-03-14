@@ -6,10 +6,18 @@
 // 型推論が動作する場合は、型推論を使うほうがいい
 var person = {
     name: 'mike',
-    age: 30
+    age: 30,
+    // 文字列の array
+    hobbies: ['Sports', 'Cooking']
 };
+// let favariteActivities: string[];
+// favariteActivities = ['Sports', 'Cooking'];
 console.log(person);
-console.log(person.name);
+for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
+    var hobby = _a[_i];
+    // hobby. とすると string の property にアクセスできコードを安全かつ簡単に書ける
+    console.log(hobby.toUpperCase());
+}
 // const product: {
 //     id: string;
 //     price: number;

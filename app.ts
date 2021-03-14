@@ -8,10 +8,19 @@
 const person = {
     name: 'mike',
     age: 30,
+    // 文字列の array
+    hobbies: ['Sports', 'Cooking'],
 };
 
+// let favariteActivities: string[];
+// favariteActivities = ['Sports', 'Cooking'];
+
 console.log(person);
-console.log(person.name);
+
+for (const hobby of person.hobbies) {
+    // hobby. とすると string の property にアクセスできコードを安全かつ簡単に書ける
+    console.log(hobby.toUpperCase());
+}
 
 // const product: {
 //     id: string;
