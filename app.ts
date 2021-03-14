@@ -1,9 +1,13 @@
-// union 型を使用
+// alias 型
+type Combinable = number | string;
+
+// 型の名前を説明的にすることができる
+type ConversionDescriptor = 'as-number' | 'as-text';
+
 function combine(
-    input1: number | string,
-    input2: number | string,
-    // literal 型で引数の型を指定
-    resultConversion: 'as-number' | 'as-text'
+    input1: Combinable, // 型の再利用ができる
+    input2: Combinable,
+    resultConversion: ConversionDescriptor,
 ) {
     let result;
 
